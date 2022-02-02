@@ -3,7 +3,9 @@
 #   (https://github.com/micro-os-plus)
 # Copyright (c) 2021 Liviu Ionescu
 #
-# This Source Code Form is subject to the terms of the MIT License.
+# Permission to use, copy, modify, and/or distribute this software
+# for any purpose is hereby granted, under the terms of the MIT license.
+#
 # If a copy of the license was not distributed with this file, it can
 # be obtained from https://opensource.org/licenses/MIT/.
 #
@@ -11,17 +13,22 @@
 
 # This file is intended to be consumed by applications with:
 #
-# `add_subdirectory("xpacks/micro-os-plus-micro-test-plus")`
+# `add_subdirectory("xpacks/micro-os-plusdevice-cortexm")`
 #
-# The result is a library that can be added to the linker with:
+# The result is an interface library that can be added to the linker with:
 #
-# `target_link_libraries(your-target PUBLIC micro-os-plus::micro-test-plus)`
+# `target_link_libraries(your-target PUBLIC micro-os-plus::device-cortexm)`
 
 # -----------------------------------------------------------------------------
 ## Preamble ##
 
 # https://cmake.org/cmake/help/v3.20/
 cmake_minimum_required(VERSION 3.20)
+
+project(
+  micro-os-plus-device-cortexm
+  DESCRIPTION "µOS++ device-cortexm"
+)
 
 if(COMMAND xpack_get_package_name_and_version)
   xpack_get_package_name_and_version("${CMAKE_CURRENT_SOURCE_DIR}/package.json")
@@ -40,6 +47,15 @@ add_library(micro-os-plus-device-cortexm-interface INTERFACE EXCLUDE_FROM_ALL)
 
 # -----------------------------------------------------------------------------
 # Target settings.
+
+target_include_directories(
+  micro-os-plus-device-cortexm-interface
+
+  INTERFACE
+    "include"
+)
+
+message(VERBOSE "+ -I include")
 
 target_sources(
   micro-os-plus-device-cortexm-interface
@@ -66,20 +82,11 @@ message(VERBOSE "+ src/startup/terminate.cpp")
 
 message(VERBOSE "+ src/exception-handlers.cpp")
 
-target_include_directories(
-  micro-os-plus-device-cortexm-interface
-
-  INTERFACE
-    "include"
-)
-
-message(VERBOSE "+ include")
-
 target_compile_definitions(
   micro-os-plus-device-cortexm-interface
 
   INTERFACE
-    # Preprocessor macro definitions
+    # ... add preprocessor macro definitions.
 )
 
 target_compile_options(
@@ -87,13 +94,6 @@ target_compile_options(
 
   INTERFACE
     # Perhaps ignore some warnings.
-)
-
-target_link_options(
-  micro-os-plus-device-cortexm-interface
-
-  INTERFACE
-    # Linker options
 )
 
 target_link_libraries(
@@ -107,6 +107,7 @@ target_link_libraries(
 # -----------------------------------------------------------------------------
 # Aliases.
 
+# https://cmake.org/cmake/help/v3.20/command/add_library.html#alias-libraries
 add_library(micro-os-plus::device-cortexm ALIAS micro-os-plus-device-cortexm-interface)
 message(VERBOSE "> micro-os-plus::device-cortexm -> micro-os-plus-device-cortexm-interface")
 
