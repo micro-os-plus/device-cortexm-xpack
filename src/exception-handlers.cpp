@@ -85,12 +85,14 @@ extern "C"
 // For debugging purposes, it is possible to set a breakpoint here.
 // To create a proper stack frame, do not jump, but call `_start()`.
 
-void __attribute__ ((section (".after_vectors"), noreturn))
+void __attribute__ ((section (".after_vectors"), noreturn,naked))
 Reset_Handler (void)
 {
   // __disable_irq ();
 
   // Fill the main stack with a pattern, to detect usage and underflow.
+  // To do this, the function must be naked, otherwise it uses stack itself
+  // and cuts the brach it sits on.
   for (unsigned int* p = &__heap_end__; p < &__stack;)
     {
       *p++ = MICRO_OS_PLUS_INTEGER_STARTUP_STACK_FILL_MAGIC; // DEADBEEF
