@@ -56,15 +56,15 @@ target_sources(
     "src/exception-handlers.cpp"
   )
 
-message(VERBOSE "+ device-sources/src/diag/trace-itm.cpp")
-message(VERBOSE "+ device-sources/src/diag/trace-segger-rtt.cpp")
+message(VERBOSE "+ src/diag/trace-itm.cpp")
+message(VERBOSE "+ src/diag/trace-segger-rtt.cpp")
 
-message(VERBOSE "+ device-sources/src/startup/initialize-hardware-early.c")
-message(VERBOSE "+ device-sources/src/startup/initialize-hardware.c")
-message(VERBOSE "+ device-sources/src/startup/initialize-interrupts-stack.cpp")
-message(VERBOSE "+ device-sources/src/startup/terminate.cpp")
+message(VERBOSE "+ src/startup/initialize-hardware-early.c")
+message(VERBOSE "+ src/startup/initialize-hardware.c")
+message(VERBOSE "+ src/startup/initialize-interrupts-stack.cpp")
+message(VERBOSE "+ src/startup/terminate.cpp")
 
-message(VERBOSE "+ device-sources/src/exception-handlers.cpp")
+message(VERBOSE "+ src/exception-handlers.cpp")
 
 target_include_directories(
   micro-os-plus-device-cortexm-interface
@@ -73,7 +73,7 @@ target_include_directories(
     "include"
 )
 
-message(VERBOSE "+ device-sources/include")
+message(VERBOSE "+ include")
 
 target_compile_definitions(
   micro-os-plus-device-cortexm-interface
@@ -108,6 +108,6 @@ target_link_libraries(
 # Aliases.
 
 add_library(micro-os-plus::device-cortexm ALIAS micro-os-plus-device-cortexm-interface)
-message(VERBOSE "micro-os-plus::device-cortexm -> micro-os-plus-device-cortexm-interface")
+message(VERBOSE "> micro-os-plus::device-cortexm -> micro-os-plus-device-cortexm-interface")
 
 # -----------------------------------------------------------------------------
