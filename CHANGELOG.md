@@ -8,6 +8,8 @@ and close existing issues and pull requests.
 
 ## 2022-02-02
 
+- v2.0.0
+- acf7f4c rename devices-cortexm
 - v1.0.0
 - 9e14495 add meson support
 - ccef66f add naked to Reset_Handler
