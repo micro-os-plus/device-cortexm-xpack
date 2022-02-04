@@ -55,8 +55,6 @@ target_include_directories(
     "include"
 )
 
-message(VERBOSE "+ -I include")
-
 target_sources(
   micro-os-plus-device-cortexm-interface
 
@@ -70,17 +68,7 @@ target_sources(
     "src/startup/terminate.cpp"
 
     "src/exception-handlers.cpp"
-  )
-
-message(VERBOSE "+ src/diag/trace-itm.cpp")
-message(VERBOSE "+ src/diag/trace-segger-rtt.cpp")
-
-message(VERBOSE "+ src/startup/initialize-hardware-early.c")
-message(VERBOSE "+ src/startup/initialize-hardware.c")
-message(VERBOSE "+ src/startup/initialize-interrupts-stack.cpp")
-message(VERBOSE "+ src/startup/terminate.cpp")
-
-message(VERBOSE "+ src/exception-handlers.cpp")
+)
 
 target_compile_definitions(
   micro-os-plus-device-cortexm-interface
@@ -103,6 +91,10 @@ target_link_libraries(
     # Dependencies
     micro-os-plus::semihosting
 )
+
+if (COMMAND xpack_display_target_lists)
+  xpack_display_target_lists(micro-os-plus-device-cortexm-interface)
+endif()
 
 # -----------------------------------------------------------------------------
 # Aliases.
