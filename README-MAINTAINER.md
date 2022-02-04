@@ -1,7 +1,7 @@
-[![license](https://img.shields.io/github/license/micro-os-plus/device-cortexm-xpack)](https://github.com/micro-os-plus/device-cortexm-xpack/blob/xpack/LICENSE)
-[![CI on Push](https://github.com/micro-os-plus/device-cortexm-xpack/workflows/CI%20on%20Push/badge.svg)](https://github.com/micro-os-plus/device-cortexm-xpack/actions?query=workflow%3A%22CI+on+Push%22)
-[![GitHub issues](https://img.shields.io/github/issues/micro-os-plus/device-cortexm-xpack.svg)](https://github.com/micro-os-plus/device-cortexm-xpack/issues/)
-[![GitHub pulls](https://img.shields.io/github/issues-pr/micro-os-plus/device-cortexm-xpack.svg)](https://github.com/micro-os-plus/device-cortexm-xpack/pulls)
+[![license](https://img.shields.io/github/license/micro-os-plus/devices-cortexm-xpack)](https://github.com/micro-os-plus/devices-cortexm-xpack/blob/xpack/LICENSE)
+[![CI on Push](https://github.com/micro-os-plus/devices-cortexm-xpack/workflows/CI%20on%20Push/badge.svg)](https://github.com/micro-os-plus/devices-cortexm-xpack/actions?query=workflow%3A%22CI+on+Push%22)
+[![GitHub issues](https://img.shields.io/github/issues/micro-os-plus/devices-cortexm-xpack.svg)](https://github.com/micro-os-plus/devices-cortexm-xpack/issues/)
+[![GitHub pulls](https://img.shields.io/github/issues-pr/micro-os-plus/devices-cortexm-xpack.svg)](https://github.com/micro-os-plus/devices-cortexm-xpack/pulls)
 
 # Maintainer info
 
@@ -20,28 +20,28 @@ npm install --global xpm@latest
 
 The project is hosted on GitHub as:
 
-- <https://github.com/micro-os-plus/device-cortexm-xpack.git>
+- <https://github.com/micro-os-plus/devices-cortexm-xpack.git>
 
 To clone the stable branch (`xpack`), run the following commands in a
 terminal (on Windows use the _Git Bash_ console):
 
 ```sh
-rm -rf ~/Work/device-cortexm-xpack.git && \
+rm -rf ~/Work/devices-cortexm-xpack.git && \
 mkdir -p ~/Work && \
 git clone \
-  https://github.com/micro-os-plus/device-cortexm-xpack.git \
-  ~/Work/device-cortexm-xpack.git
+  https://github.com/micro-os-plus/devices-cortexm-xpack.git \
+  ~/Work/devices-cortexm-xpack.git
 ```
 
 For development purposes, clone the `xpack-develop` branch:
 
 ```sh
-rm -rf ~/Work/device-cortexm-xpack.git && \
+rm -rf ~/Work/devices-cortexm-xpack.git && \
 mkdir -p ~/Work && \
 git clone \
   --branch xpack-develop \
-  https://github.com/micro-os-plus/device-cortexm-xpack.git \
-  ~/Work/device-cortexm-xpack.git
+  https://github.com/micro-os-plus/devices-cortexm-xpack.git \
+  ~/Work/devices-cortexm-xpack.git
 ```
 
 ## Development setup
@@ -53,7 +53,7 @@ if you have older versions of the xPack installed, sometimes updates may fail
 to get the latest version. To fix this remove all global packages by using
 
 ```sh
-cd ~/Work/device-cortexm-xpack.git
+cd ~/Work/devices-cortexm-xpack.git
 xpm run rm-global-deps
 ```
 
@@ -64,7 +64,7 @@ and repeat the steps from `xpm install`.
 With a clean slate, install dependencies:
 
 ```sh
-cd ~/Work/device-cortexm-xpack.git
+cd ~/Work/devices-cortexm-xpack.git
 xpm run install-all
 ```
 
@@ -75,7 +75,7 @@ The project includes unit tests.
 To perform the tests, run the usual xpm sequence:
 
 ```sh
-cd ~/Work/device-cortexm-xpack.git
+cd ~/Work/devices-cortexm-xpack.git
 xpm run test-all
 ```
 
@@ -101,14 +101,14 @@ After cloning all Git repos, link this project to the development packages,
 by running the `link-deps` actions:
 
 ```sh
-cd device-cortexm-xpack.git
+cd devices-cortexm-xpack.git
 xpm run link-deps
 ```
 
 ## Continuous Integration
 
 The CI tests are performed on GitHub Actions, as the
-[CI on Push](https://github.com/micro-os-plus/device-cortexm-xpack/actions?query=workflow%3A%22CI+on+Push%22)
+[CI on Push](https://github.com/micro-os-plus/devices-cortexm-xpack/actions?query=workflow%3A%22CI+on+Push%22)
 workflow.
 
 ## Code formatting
@@ -124,14 +124,14 @@ CppStyle plug-in.
 In the `micro-os-plus/web-jekyll` GitHub repo:
 
 - select the `develop` branch
-- add a new file to `_posts/device-cortexm/releases`
-- name the file like `2020-12-19-device-cortexm-v0-1-0-released.md`
-- name the post like: **µOS++ device-cortexm v1.0.0 released**
+- add a new file to `_posts/devices-cortexm/releases`
+- name the file like `2020-12-19-devices-cortexm-v0-1-0-released.md`
+- name the post like: **µOS++ devices-cortexm v1.0.0 released**
 - update the `date:` field with the current date
 - update the GitHub Actions URLs using the actual test pages
 
 If any, refer to closed
-[issues](https://github.com/micro-os-plus/device-cortexm-xpack/issues/)
+[issues](https://github.com/micro-os-plus/devices-cortexm-xpack/issues/)
 as:
 
 - **[Issue:\[#1\]\(...\)]**.
@@ -151,13 +151,13 @@ as:
 - push the `xpack-develop` branch to GitHub
 - the `postversion` npm script should also update tags via `git push origin --tags`
 - wait for the CI job to complete
-  (<https://github.com/micro-os-plus/device-cortexm-xpack/actions/workflows/CI.yml>)
+  (<https://github.com/micro-os-plus/devices-cortexm-xpack/actions/workflows/CI.yml>)
 - `npm publish --tag next` (use `--access public` when publishing for
   the first time)
 
 The version is visible at:
 
-- <https://www.npmjs.com/package/@micro-os-plus/device-cortexm?activeTab=versions>
+- <https://www.npmjs.com/package/@micro-os-plus/devices-cortexm?activeTab=versions>
 
 ## Update the repo
 
@@ -172,9 +172,9 @@ When the package is considered stable:
 
 When the release is considered stable, promote it as `latest`:
 
-- `npm dist-tag ls @micro-os-plus/device-cortexm`
-- `npm dist-tag add @micro-os-plus/device-cortexm@1.0.0 latest`
-- `npm dist-tag ls @@micro-os-plus/device-cortexm`
+- `npm dist-tag ls @micro-os-plus/devices-cortexm`
+- `npm dist-tag add @micro-os-plus/devices-cortexm@1.0.0 latest`
+- `npm dist-tag ls @@micro-os-plus/devices-cortexm`
 
 ## Announce to the community
 
@@ -184,6 +184,6 @@ Post an announcement to the forum.
 
 - in a separate browser windows, open [TweetDeck](https://tweetdeck.twitter.com/)
 - using the `@micro_os_plus` account
-- paste the release name like **µOS++ device-cortexm v1.0.0 released**
+- paste the release name like **µOS++ devices-cortexm v1.0.0 released**
 - paste the link to the Web page release
 - click the **Tweet** button

@@ -13,21 +13,21 @@
 
 # This file is intended to be consumed by applications with:
 #
-# `subdir('xpacks/micro-os-plus-device-cortexm')`
+# `subdir('xpacks/micro-os-plus-devices-cortexm')`
 #
 # The result is a dependency that can be refered as:
 #
-# `dependencies: [micro_os_plus_device_cortexm_dependency],`
+# `dependencies: [micro_os_plus_devices_cortexm_dependency],`
 
 # Note: the meson configuration is provided only as a proof of concept,
 # for production it might need some refinements.
 
 # -----------------------------------------------------------------------------
 
-message('Processing xPack @micro-os-plus/device-cortexm...')
+message('Processing xPack @micro-os-plus/devices-cortexm...')
 
 # https://mesonbuild.com/Reference-manual_functions.html#declare_dependency
-micro_os_plus_device_cortexm_dependency = declare_dependency(
+micro_os_plus_devices_cortexm_dependency = declare_dependency(
   include_directories: include_directories(
     'include',
   ),
@@ -50,6 +50,6 @@ micro_os_plus_device_cortexm_dependency = declare_dependency(
 )
 
 message('+ -I include')
-message('> micro_os_plus_device_cortexm_dependency')
+message('> micro_os_plus_devices_cortexm_dependency')
 
 # -----------------------------------------------------------------------------

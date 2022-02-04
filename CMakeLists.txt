@@ -13,11 +13,11 @@
 
 # This file is intended to be consumed by applications with:
 #
-# `add_subdirectory("xpacks/micro-os-plusdevice-cortexm")`
+# `add_subdirectory("xpacks/micro-os-plus-devices-cortexm")`
 #
 # The result is an interface library that can be added to the linker with:
 #
-# `target_link_libraries(your-target PUBLIC micro-os-plus::device-cortexm)`
+# `target_link_libraries(your-target PUBLIC micro-os-plus::devices-cortexm)`
 
 # -----------------------------------------------------------------------------
 ## Preamble ##
@@ -26,8 +26,8 @@
 cmake_minimum_required(VERSION 3.20)
 
 project(
-  micro-os-plus-device-cortexm
-  DESCRIPTION "µOS++ device-cortexm"
+  micro-os-plus-devices-cortexm
+  DESCRIPTION "µOS++ devices-cortexm"
 )
 
 if(COMMAND xpack_get_package_name_and_version)
@@ -43,20 +43,20 @@ endif()
 # INTERFACE: usage definitions, passed up to targets linking to it
 # PUBLIC: both
 
-add_library(micro-os-plus-device-cortexm-interface INTERFACE EXCLUDE_FROM_ALL)
+add_library(micro-os-plus-devices-cortexm-interface INTERFACE EXCLUDE_FROM_ALL)
 
 # -----------------------------------------------------------------------------
 # Target settings.
 
 target_include_directories(
-  micro-os-plus-device-cortexm-interface
+  micro-os-plus-devices-cortexm-interface
 
   INTERFACE
     "include"
 )
 
 target_sources(
-  micro-os-plus-device-cortexm-interface
+  micro-os-plus-devices-cortexm-interface
 
   INTERFACE
     "src/diag/trace-itm.cpp"
@@ -71,21 +71,21 @@ target_sources(
 )
 
 target_compile_definitions(
-  micro-os-plus-device-cortexm-interface
+  micro-os-plus-devices-cortexm-interface
 
   INTERFACE
     # ... add preprocessor macro definitions.
 )
 
 target_compile_options(
-  micro-os-plus-device-cortexm-interface
+  micro-os-plus-devices-cortexm-interface
 
   INTERFACE
     # Perhaps ignore some warnings.
 )
 
 target_link_libraries(
-  micro-os-plus-device-cortexm-interface
+  micro-os-plus-devices-cortexm-interface
 
   INTERFACE
     # Dependencies
@@ -93,14 +93,14 @@ target_link_libraries(
 )
 
 if (COMMAND xpack_display_target_lists)
-  xpack_display_target_lists(micro-os-plus-device-cortexm-interface)
+  xpack_display_target_lists(micro-os-plus-devices-cortexm-interface)
 endif()
 
 # -----------------------------------------------------------------------------
 # Aliases.
 
 # https://cmake.org/cmake/help/v3.20/command/add_library.html#alias-libraries
-add_library(micro-os-plus::device-cortexm ALIAS micro-os-plus-device-cortexm-interface)
-message(VERBOSE "> micro-os-plus::device-cortexm -> micro-os-plus-device-cortexm-interface")
+add_library(micro-os-plus::devices-cortexm ALIAS micro-os-plus-devices-cortexm-interface)
+message(VERBOSE "> micro-os-plus::devices-cortexm -> micro-os-plus-devices-cortexm-interface")
 
 # -----------------------------------------------------------------------------

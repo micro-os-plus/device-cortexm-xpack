@@ -1,5 +1,5 @@
-[![license](https://img.shields.io/github/license/micro-os-plus/device-cortexm-xpack)](https://github.com/micro-os-plus/device-cortexm-xpack/blob/xpack/LICENSE)
-[![CI on Push](https://github.com/micro-os-plus/device-cortexm-xpack/workflows/CI%20on%20Push/badge.svg)](https://github.com/micro-os-plus/device-cortexm-xpack/actions?query=workflow%3A%22CI+on+Push%22)
+[![license](https://img.shields.io/github/license/micro-os-plus/devices-cortexm-xpack)](https://github.com/micro-os-plus/devices-cortexm-xpack/blob/xpack/LICENSE)
+[![CI on Push](https://github.com/micro-os-plus/devices-cortexm-xpack/workflows/CI%20on%20Push/badge.svg)](https://github.com/micro-os-plus/devices-cortexm-xpack/actions?query=workflow%3A%22CI+on+Push%22)
 
 # A source xPack with µOS++ Cortex-M definitions
 
@@ -8,7 +8,7 @@ available only via the vendor specific device headers, so they
 cannot be located in the architecture package.
 
 The project is hosted on GitHub as
-[micro-os-plus/device-cortexm-xpack](https://github.com/micro-os-plus/device-cortexm-xpack).
+[micro-os-plus/devices-cortexm-xpack](https://github.com/micro-os-plus/devices-cortexm-xpack).
 
 ## Maintainer info
 
@@ -41,18 +41,18 @@ For now, it can be installed from GitHub:
 cd my-project
 xpm init # Unless a package.json is already present
 
-xpm install github:micro-os-plus/device-cortexm-xpack
+xpm install github:micro-os-plus/devices-cortexm-xpack
 ```
 
 When ready, this package will be available as
-[`@micro-os-plus/device-cortexm`](https://www.npmjs.com/package/@micro-os-plus/device-cortexm)
+[`@micro-os-plus/devices-cortexm`](https://www.npmjs.com/package/@micro-os-plus/devices-cortexm)
 from the `npmjs.com` registry:
 
 ```sh
 cd my-project
 xpm init # Unless a package.json is already present
 
-xpm install @micro-os-plus/device-cortexm@latest
+xpm install @micro-os-plus/devices-cortexm@latest
 ```
 
 ### Git submodule
@@ -65,8 +65,8 @@ cd my-project
 git init # Unless already a Git project
 mkdir -p xpacks
 
-git submodule add https://github.com/micro-os-plus/device-cortexm-xpack.git \
-  xpacks/micro-os-plus-device-cortexm
+git submodule add https://github.com/micro-os-plus/devices-cortexm-xpack.git \
+  xpacks/micro-os-plus/devices-cortexm
 ```
 
 ## Branches
@@ -101,7 +101,7 @@ To integrate this package into user projects, consider the following details:
 
 - `src`
 
-The source file to be added to user projects is: `device-cortexm.cpp`.
+The source file to be added to user projects is: `devices-cortexm.cpp`.
 
 #### Include folders
 
@@ -110,7 +110,7 @@ The source file to be added to user projects is: `device-cortexm.cpp`.
 The header file to be included in user project is:
 
 ```c++
-#include <micro-os-plus/device-cortexm.h>
+#include <micro-os-plus/devices-cortexm.h>
 ```
 
 #### Preprocessor definitions
@@ -141,7 +141,7 @@ TBD
 ### Tests
 
 The project is fully tested via GitHub
-[Actions](https://github.com/micro-os-plus/device-cortexm-xpack/actions)
+[Actions](https://github.com/micro-os-plus/devices-cortexm-xpack/actions)
 on each push.
 The tests run on GNU/Linux, macOS and Windows, are compiled with GCC,
 clang and arm-none-eabi-gcc and run natively or via QEMU.
