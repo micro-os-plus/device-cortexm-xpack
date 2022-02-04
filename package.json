@@ -1,6 +1,6 @@
 {
   "name": "@micro-os-plus/device-cortexm",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "A source xPack with µOS++ Cortex-M device definitions",
   "main": "",
   "scripts": {
