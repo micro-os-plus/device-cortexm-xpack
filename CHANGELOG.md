@@ -6,6 +6,10 @@ Please check
 [GitHub](https://github.com/micro-os-plus/devices-cortexm-xpack/issues/)
 and close existing issues and pull requests.
 
+## 2022-02-05
+
+- v2.0.1
+
 ## 2022-02-02
 
 - v2.0.0
