@@ -122,11 +122,11 @@ The header file to be included in user project is:
 - `-std=c++17` or higher for C++ sources
 - `-std=c11` for C sources
 
-#### Namespaces
+#### C++ Namespaces
 
 TBD
 
-#### Classes
+#### C++ Classes
 
 TBD
 
@@ -141,7 +141,7 @@ TBD
 ### Tests
 
 The project is fully tested via GitHub
-[Actions](https://github.com/micro-os-plus/devices-cortexm-xpack/actions)
+[Actions](https://github.com/micro-os-plus/devices-cortexm-xpack/actions/)
 on each push.
 The tests run on GNU/Linux, macOS and Windows, are compiled with GCC,
 clang and arm-none-eabi-gcc and run natively or via QEMU.
