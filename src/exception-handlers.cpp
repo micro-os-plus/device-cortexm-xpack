@@ -107,7 +107,7 @@ void __attribute__ ((section (".after_vectors"), weak)) NMI_Handler (void)
 
 // ----------------------------------------------------------------------------
 
-#if defined(TRACE)
+#if defined(MICRO_OS_PLUS_TRACE)
 
 #if defined(__ARM_ARCH_7M__) || defined(__ARM_ARCH_7EM__)
 
@@ -175,7 +175,7 @@ dump_exception_stack (exception_stack_frame_s* frame, uint32_t lr)
 
 #endif // defined(__ARM_ARCH_6M__)
 
-#endif // defined(TRACE)
+#endif // defined(MICRO_OS_PLUS_TRACE)
 
 // ----------------------------------------------------------------------------
 
@@ -401,7 +401,7 @@ void __attribute__ ((section (".after_vectors"), weak, used))
 hard_fault_handler_c (exception_stack_frame_s* frame __attribute__ ((unused)),
                       uint32_t lr __attribute__ ((unused)))
 {
-#if defined(TRACE)
+#if defined(MICRO_OS_PLUS_TRACE)
   uint32_t mmfar = SCB->MMFAR; // MemManage Fault Address
   uint32_t bfar = SCB->BFAR; // Bus Fault Address
   uint32_t cfsr = SCB->CFSR; // Configurable Fault Status Registers
@@ -431,10 +431,10 @@ hard_fault_handler_c (exception_stack_frame_s* frame __attribute__ ((unused)),
 
 #endif // semihosting
 
-#if defined(TRACE)
+#if defined(MICRO_OS_PLUS_TRACE)
   trace::printf ("[HardFault]\n");
   dump_exception_stack (frame, cfsr, mmfar, bfar, lr);
-#endif // defined(TRACE)
+#endif // defined(MICRO_OS_PLUS_TRACE)
 
 #if defined(DEBUG)
 #if defined(__ARM_ARCH_7M__) || defined(__ARM_ARCH_7EM__)
@@ -495,10 +495,10 @@ hard_fault_handler_c (exception_stack_frame_s* frame __attribute__ ((unused)),
   // There is no semihosting support for Cortex-M0, since on ARMv6-M
   // faults are fatal and it is not possible to return from the handler.
 
-#if defined(TRACE)
+#if defined(MICRO_OS_PLUS_TRACE)
   trace::printf ("[HardFault]\n");
   dump_exception_stack (frame, lr);
-#endif // defined(TRACE)
+#endif // defined(MICRO_OS_PLUS_TRACE)
 
 #if defined(DEBUG)
 #if defined(__ARM_ARCH_7M__) || defined(__ARM_ARCH_7EM__)
@@ -564,14 +564,14 @@ void __attribute__ ((section (".after_vectors"), weak, used))
 bus_fault_handler_c (exception_stack_frame_s* frame __attribute__ ((unused)),
                      uint32_t lr __attribute__ ((unused)))
 {
-#if defined(TRACE)
+#if defined(MICRO_OS_PLUS_TRACE)
   uint32_t mmfar = SCB->MMFAR; // MemManage Fault Address
   uint32_t bfar = SCB->BFAR; // Bus Fault Address
   uint32_t cfsr = SCB->CFSR; // Configurable Fault Status Registers
 
   trace::printf ("[BusFault]\n");
   dump_exception_stack (frame, cfsr, mmfar, bfar, lr);
-#endif // defined(TRACE)
+#endif // defined(MICRO_OS_PLUS_TRACE)
 
 #if defined(DEBUG)
 #if defined(__ARM_ARCH_7M__) || defined(__ARM_ARCH_7EM__)
@@ -613,7 +613,7 @@ void __attribute__ ((section (".after_vectors"), weak, used))
 usage_fault_handler_c (exception_stack_frame_s* frame __attribute__ ((unused)),
                        uint32_t lr __attribute__ ((unused)))
 {
-#if defined(TRACE)
+#if defined(MICRO_OS_PLUS_TRACE)
   uint32_t mmfar = SCB->MMFAR; // MemManage Fault Address
   uint32_t bfar = SCB->BFAR; // Bus Fault Address
   uint32_t cfsr = SCB->CFSR; // Configurable Fault Status Registers
@@ -632,10 +632,10 @@ usage_fault_handler_c (exception_stack_frame_s* frame __attribute__ ((unused)),
 
 #endif
 
-#if defined(TRACE)
+#if defined(MICRO_OS_PLUS_TRACE)
   trace::printf ("[UsageFault]\n");
   dump_exception_stack (frame, cfsr, mmfar, bfar, lr);
-#endif // defined(TRACE)
+#endif // defined(MICRO_OS_PLUS_TRACE)
 
 #if defined(DEBUG)
 #if defined(__ARM_ARCH_7M__) || defined(__ARM_ARCH_7EM__)
