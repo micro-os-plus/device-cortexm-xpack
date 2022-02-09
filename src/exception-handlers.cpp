@@ -88,7 +88,7 @@ Reset_Handler (void)
 
 void __attribute__ ((section (".after_vectors"), weak)) NMI_Handler (void)
 {
-#if defined(DEBUG)
+#if defined(MICRO_OS_PLUS_DEBUG)
 #if defined(__ARM_ARCH_7M__) || defined(__ARM_ARCH_7EM__)
   if ((CoreDebug->DHCSR & CoreDebug_DHCSR_C_DEBUGEN_Msk) != 0)
     {
@@ -97,7 +97,7 @@ void __attribute__ ((section (".after_vectors"), weak)) NMI_Handler (void)
 #else
   cortexm::architecture::bkpt ();
 #endif // defined(__ARM_ARCH_7M__) || defined(__ARM_ARCH_7EM__)
-#endif // defined(DEBUG)
+#endif // defined(MICRO_OS_PLUS_DEBUG)
 
   while (1)
     {
@@ -436,7 +436,7 @@ hard_fault_handler_c (exception_stack_frame_s* frame __attribute__ ((unused)),
   dump_exception_stack (frame, cfsr, mmfar, bfar, lr);
 #endif // defined(MICRO_OS_PLUS_TRACE)
 
-#if defined(DEBUG)
+#if defined(MICRO_OS_PLUS_DEBUG)
 #if defined(__ARM_ARCH_7M__) || defined(__ARM_ARCH_7EM__)
   if ((CoreDebug->DHCSR & CoreDebug_DHCSR_C_DEBUGEN_Msk) != 0)
     {
@@ -445,7 +445,7 @@ hard_fault_handler_c (exception_stack_frame_s* frame __attribute__ ((unused)),
 #else
   cortexm::architecture::bkpt ();
 #endif // defined(__ARM_ARCH_7M__) || defined(__ARM_ARCH_7EM__)
-#endif // defined(DEBUG)
+#endif // defined(MICRO_OS_PLUS_DEBUG)
 
   while (1)
     {
@@ -500,7 +500,7 @@ hard_fault_handler_c (exception_stack_frame_s* frame __attribute__ ((unused)),
   dump_exception_stack (frame, lr);
 #endif // defined(MICRO_OS_PLUS_TRACE)
 
-#if defined(DEBUG)
+#if defined(MICRO_OS_PLUS_DEBUG)
 #if defined(__ARM_ARCH_7M__) || defined(__ARM_ARCH_7EM__)
   if ((CoreDebug->DHCSR & CoreDebug_DHCSR_C_DEBUGEN_Msk) != 0)
     {
@@ -509,7 +509,7 @@ hard_fault_handler_c (exception_stack_frame_s* frame __attribute__ ((unused)),
 #else
   cortexm::architecture::bkpt ();
 #endif // defined(__ARM_ARCH_7M__) || defined(__ARM_ARCH_7EM__)
-#endif // defined(DEBUG)
+#endif // defined(MICRO_OS_PLUS_DEBUG)
 
   while (1)
     {
@@ -524,7 +524,7 @@ hard_fault_handler_c (exception_stack_frame_s* frame __attribute__ ((unused)),
 void __attribute__ ((section (".after_vectors"), weak))
 MemManage_Handler (void)
 {
-#if defined(DEBUG)
+#if defined(MICRO_OS_PLUS_DEBUG)
 #if defined(__ARM_ARCH_7M__) || defined(__ARM_ARCH_7EM__)
   if ((CoreDebug->DHCSR & CoreDebug_DHCSR_C_DEBUGEN_Msk) != 0)
     {
@@ -533,7 +533,7 @@ MemManage_Handler (void)
 #else
   cortexm::architecture::bkpt ();
 #endif // defined(__ARM_ARCH_7M__) || defined(__ARM_ARCH_7EM__)
-#endif // defined(DEBUG)
+#endif // defined(MICRO_OS_PLUS_DEBUG)
 
   while (1)
     {
@@ -573,7 +573,7 @@ bus_fault_handler_c (exception_stack_frame_s* frame __attribute__ ((unused)),
   dump_exception_stack (frame, cfsr, mmfar, bfar, lr);
 #endif // defined(MICRO_OS_PLUS_TRACE)
 
-#if defined(DEBUG)
+#if defined(MICRO_OS_PLUS_DEBUG)
 #if defined(__ARM_ARCH_7M__) || defined(__ARM_ARCH_7EM__)
   if ((CoreDebug->DHCSR & CoreDebug_DHCSR_C_DEBUGEN_Msk) != 0)
     {
@@ -582,7 +582,7 @@ bus_fault_handler_c (exception_stack_frame_s* frame __attribute__ ((unused)),
 #else
   cortexm::architecture::bkpt ();
 #endif // defined(__ARM_ARCH_7M__) || defined(__ARM_ARCH_7EM__)
-#endif // defined(DEBUG)
+#endif // defined(MICRO_OS_PLUS_DEBUG)
 
   while (1)
     {
@@ -637,7 +637,7 @@ usage_fault_handler_c (exception_stack_frame_s* frame __attribute__ ((unused)),
   dump_exception_stack (frame, cfsr, mmfar, bfar, lr);
 #endif // defined(MICRO_OS_PLUS_TRACE)
 
-#if defined(DEBUG)
+#if defined(MICRO_OS_PLUS_DEBUG)
 #if defined(__ARM_ARCH_7M__) || defined(__ARM_ARCH_7EM__)
   if ((CoreDebug->DHCSR & CoreDebug_DHCSR_C_DEBUGEN_Msk) != 0)
     {
@@ -646,7 +646,7 @@ usage_fault_handler_c (exception_stack_frame_s* frame __attribute__ ((unused)),
 #else
   cortexm::architecture::bkpt ();
 #endif // defined(__ARM_ARCH_7M__) || defined(__ARM_ARCH_7EM__)
-#endif // defined(DEBUG)
+#endif // defined(MICRO_OS_PLUS_DEBUG)
 
   while (1)
     {
@@ -658,7 +658,7 @@ usage_fault_handler_c (exception_stack_frame_s* frame __attribute__ ((unused)),
 
 void __attribute__ ((section (".after_vectors"), weak)) SVC_Handler (void)
 {
-#if defined(DEBUG)
+#if defined(MICRO_OS_PLUS_DEBUG)
 #if defined(__ARM_ARCH_7M__) || defined(__ARM_ARCH_7EM__)
   if ((CoreDebug->DHCSR & CoreDebug_DHCSR_C_DEBUGEN_Msk) != 0)
     {
@@ -667,7 +667,7 @@ void __attribute__ ((section (".after_vectors"), weak)) SVC_Handler (void)
 #else
   cortexm::architecture::bkpt ();
 #endif // defined(__ARM_ARCH_7M__) || defined(__ARM_ARCH_7EM__)
-#endif // defined(DEBUG)
+#endif // defined(MICRO_OS_PLUS_DEBUG)
 
   while (1)
     {
@@ -679,12 +679,12 @@ void __attribute__ ((section (".after_vectors"), weak)) SVC_Handler (void)
 
 void __attribute__ ((section (".after_vectors"), weak)) DebugMon_Handler (void)
 {
-#if defined(DEBUG)
+#if defined(MICRO_OS_PLUS_DEBUG)
   if ((CoreDebug->DHCSR & CoreDebug_DHCSR_C_DEBUGEN_Msk) != 0)
     {
       cortexm::architecture::bkpt ();
     }
-#endif // defined(DEBUG)
+#endif // defined(MICRO_OS_PLUS_DEBUG)
 
   while (1)
     {
@@ -696,7 +696,7 @@ void __attribute__ ((section (".after_vectors"), weak)) DebugMon_Handler (void)
 
 void __attribute__ ((section (".after_vectors"), weak)) PendSV_Handler (void)
 {
-#if defined(DEBUG)
+#if defined(MICRO_OS_PLUS_DEBUG)
 #if defined(__ARM_ARCH_7M__) || defined(__ARM_ARCH_7EM__)
   if ((CoreDebug->DHCSR & CoreDebug_DHCSR_C_DEBUGEN_Msk) != 0)
     {
@@ -705,7 +705,7 @@ void __attribute__ ((section (".after_vectors"), weak)) PendSV_Handler (void)
 #else
   cortexm::architecture::bkpt ();
 #endif // defined(__ARM_ARCH_7M__) || defined(__ARM_ARCH_7EM__)
-#endif // defined(DEBUG)
+#endif // defined(MICRO_OS_PLUS_DEBUG)
 
   while (1)
     {
