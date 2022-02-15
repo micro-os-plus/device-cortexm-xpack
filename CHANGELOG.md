@@ -6,6 +6,28 @@ Please check
 [GitHub](https://github.com/micro-os-plus/devices-cortexm-xpack/issues/)
 and close existing issues and pull requests.
 
+## 2022-02-15
+
+- v3.0.0
+
+## 2022-02-10
+
+- 412b020 .c* include <micro-os-plus/config.h>
+- c8eb77f add .clang-format
+
+## 2022-02-09
+
+- 0176210 MICRO_OS_PLUS_INCLUDE_CONFIG_H
+- 2d2c1cb rename MICRO_OS_PLUS_DEBUG
+
+## 2022-02-08
+
+- db9c59c rename MICRO_OS_PLUS_TRACE
+
+## 2022-02-06
+
+- 2da8395 MICRO_OS_PLUS_HAS_CONFIG_H
+
 ## 2022-02-05
 
 - v2.0.1
