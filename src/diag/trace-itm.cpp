@@ -89,7 +89,9 @@ namespace micro_os_plus
           // Wait until STIMx is ready...
           while (ITM->PORT[MICRO_OS_PLUS_INTEGER_TRACE_ITM_STIMULUS_PORT].u32
                  == 0)
-            ;
+            {
+              // Busy wait!
+            }
           // then send data, one byte at a time
           ITM->PORT[MICRO_OS_PLUS_INTEGER_TRACE_ITM_STIMULUS_PORT].u8
               = (uint8_t) (*cbuf++);
