@@ -77,6 +77,13 @@ extern "C"
 void __attribute__ ((section (".after_vectors"), noreturn,naked))
 Reset_Handler (void)
 {
+#if defined(__pic__)
+#error "PIC not implemented"
+// TODO: add assembly code to initialise R9 and to copy .got tables,
+// otherwise accesses to linker script definitions will result in
+// wrong addresses.
+#endif
+
   // __disable_irq ();
 
   // Fill the main stack with a pattern, to detect usage and underflow.
