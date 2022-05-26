@@ -88,7 +88,7 @@ Reset_Handler (void)
 
   // Fill the main stack with a pattern, to detect usage and underflow.
   // To do this, the function must be naked, otherwise it uses stack itself
-  // and cuts the brach it sits on.
+  // and cuts the branch it sits on.
   for (unsigned int* p = &__heap_end__; p < &__stack;)
     {
       *p++ = MICRO_OS_PLUS_INTEGER_STARTUP_STACK_FILL_MAGIC; // DEADBEEF
