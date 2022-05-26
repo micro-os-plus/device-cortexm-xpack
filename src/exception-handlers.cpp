@@ -235,7 +235,7 @@ is_semihosting_call (exception_stack_frame_s* frame, uint16_t opCode)
         case SEMIHOSTING_SYS_CLOCK:
         case SEMIHOSTING_SYS_ELAPSED:
         case SEMIHOSTING_SYS_FLEN:
-        case SEMIHOSTING_SYS_GET_CMDLINE:
+        case SEMIHOSTING_SYS_GETCMDLINE:
         case SEMIHOSTING_SYS_REMOVE:
         case SEMIHOSTING_SYS_RENAME:
         case SEMIHOSTING_SYS_SEEK:
