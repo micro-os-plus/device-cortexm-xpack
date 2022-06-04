@@ -158,7 +158,9 @@ backwards incompatible changes are introduced to the public API.
 The incompatible changes, in reverse chronological order,
 are:
 
-- TBD
+- v4.x: rename `SEMIHOSTING_SYS_GETCMDLINE`
+- v3.x: rename `DEBUG` to `MICRO_OS_PLUS_DEBUG`; `TRACE` to
+  `MICRO_OS_PLUS_TRACE`
 
 ## License
 
