@@ -6,6 +6,12 @@ Please check
 [GitHub](https://github.com/micro-os-plus/devices-cortexm-xpack/issues/)
 and close existing issues and pull requests.
 
+## 2022-06-09
+
+* v4.1.0 prepared
+* 5603000 MICRO_OS_PLUS_INCLUDE_STARTUP
+* 969d448 exception-handlers: weak Reset_Handler
+
 ## 2022-06-04
 
 * v4.0.0
