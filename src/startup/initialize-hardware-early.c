@@ -18,6 +18,8 @@
 #include <micro-os-plus/config.h>
 #endif // MICRO_OS_PLUS_INCLUDE_CONFIG_H
 
+#if defined(MICRO_OS_PLUS_INCLUDE_STARTUP)
+
 #include <micro-os-plus/startup/hooks.h>
 #include <micro-os-plus/device.h>
 
@@ -55,7 +57,7 @@ micro_os_plus_startup_initialize_hardware_early (void)
 
   // Set VTOR to the actual address, provided by the linker script.
   // Override the manual, possibly wrong, SystemInit() setting.
-  SCB->VTOR = (uint32_t) (&__vectors_start);
+  SCB->VTOR = (uint32_t)(&__vectors_start);
   // Ensure all subsequence instructions use the new configuration.
   __DSB ();
 
@@ -89,6 +91,8 @@ micro_os_plus_startup_initialize_hardware_early (void)
 
 #endif
 }
+
+#endif // defined(MICRO_OS_PLUS_INCLUDE_STARTUP)
 
 // ----------------------------------------------------------------------------
 

@@ -18,6 +18,8 @@
 #include <micro-os-plus/config.h>
 #endif // MICRO_OS_PLUS_INCLUDE_CONFIG_H
 
+#if defined(MICRO_OS_PLUS_INCLUDE_STARTUP)
+
 #include <micro-os-plus/device.h>
 #include <micro-os-plus/startup/hooks.h>
 
@@ -38,6 +40,8 @@ micro_os_plus_terminate (int code __attribute__ ((unused)))
 }
 
 #endif // !defined(MICRO_OS_PLUS_USE_SEMIHOSTING_SYSCALLS)
+
+#endif // defined(MICRO_OS_PLUS_INCLUDE_STARTUP)
 
 // ----------------------------------------------------------------------------
 
