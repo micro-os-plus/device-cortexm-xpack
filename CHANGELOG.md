@@ -8,7 +8,7 @@ and close existing issues and pull requests.
 
 ## 2022-06-09
 
-* v4.1.0 prepared
+* v4.1.0 released
 * 5603000 MICRO_OS_PLUS_INCLUDE_STARTUP
 * 969d448 exception-handlers: weak Reset_Handler
 
