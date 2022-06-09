@@ -74,7 +74,7 @@ extern "C"
 // For debugging purposes, it is possible to set a breakpoint here.
 // To create a proper stack frame, do not jump, but call `_start()`.
 
-void __attribute__ ((section (".after_vectors"), noreturn,naked))
+void __attribute__ ((section (".after_vectors"), weak, noreturn, naked))
 Reset_Handler (void)
 {
 #if defined(__pic__)
