@@ -94,7 +94,7 @@ namespace micro_os_plus
             }
           // then send data, one byte at a time
           ITM->PORT[MICRO_OS_PLUS_INTEGER_TRACE_ITM_STIMULUS_PORT].u8
-              = (uint8_t) (*cbuf++);
+              = (uint8_t)(*cbuf++);
         }
 
       // All characters successfully sent.
