@@ -2,7 +2,7 @@
 [![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/micro-os-plus/devices-cortexm-xpack)](https://github.com/micro-os-plus/devices-cortexm-xpack/tags/)
 [![npm (scoped)](https://img.shields.io/npm/v/@micro-os-plus/devices-cortexm.svg?color=blue)](https://www.npmjs.com/package/@micro-os-plus/devices-cortexm/)
 [![license](https://img.shields.io/github/license/micro-os-plus/devices-cortexm-xpack)](https://github.com/micro-os-plus/devices-cortexm-xpack/blob/xpack/LICENSE)
-[![CI on Push](https://github.com/micro-os-plus/devices-cortexm-xpack/actions/workflows/CI.yml/badge.svg)](https://github.com/micro-os-plus/devices-cortexm-xpack/actions/workflows/CI.yml)
+[![CI on Push](https://github.com/micro-os-plus/devices-cortexm-xpack/actions/workflows/ci.yml/badge.svg)](https://github.com/micro-os-plus/devices-cortexm-xpack/actions/workflows/ci.yml)
 
 # A source library xPack with µOS++ Cortex-M definitions
 
